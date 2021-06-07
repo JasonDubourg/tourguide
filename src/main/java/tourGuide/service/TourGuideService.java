@@ -144,17 +144,13 @@ public class TourGuideService {
 	private double generateRandomLongitude() {
 		double leftLimit = -180;
 		double rightLimit = 180;
-		double localisation = leftLimit + new Random().nextDouble() * (rightLimit - leftLimit);
-		System.out.println("Longitude : " + localisation);
-		return localisation;
+		return leftLimit + new Random().nextDouble() * (rightLimit - leftLimit);
 	}
 
 	private double generateRandomLatitude() {
 		double leftLimit = -85.05112878;
 		double rightLimit = 85.05112878;
-		double localisation = leftLimit + new Random().nextDouble() * (rightLimit - leftLimit);
-		System.out.println("Latitude : " + localisation);
-		return localisation;
+		return leftLimit + new Random().nextDouble() * (rightLimit - leftLimit);
 	}
 
 	private Date getRandomTime() {
