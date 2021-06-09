@@ -20,11 +20,11 @@ public class RewardsService {
 <span class="fc" id="L20">	private int defaultProximityBuffer = 10;</span>
 <span class="fc" id="L21">	private int proximityBuffer = defaultProximityBuffer;</span>
 <span class="fc" id="L22">	private int attractionProximityRange = 200;</span>
-	private final GpsUtil gpsUtil;
+	private final GpsUtilService gpsUtilService;
 	private final RewardCentral rewardsCentral;
 
-<span class="fc" id="L26">	public RewardsService(GpsUtil gpsUtil, RewardCentral rewardCentral) {</span>
-<span class="fc" id="L27">		this.gpsUtil = gpsUtil;</span>
+<span class="fc" id="L26">	public RewardsService(GpsUtilService gpsUtilService, RewardCentral rewardCentral) {</span>
+<span class="fc" id="L27">		this.gpsUtilService = gpsUtilService;</span>
 <span class="fc" id="L28">		this.rewardsCentral = rewardCentral;</span>
 <span class="fc" id="L29">	}</span>
 
@@ -40,7 +40,7 @@ public class RewardsService {
 <span class="fc" id="L40">		List&lt;VisitedLocation&gt; userLocations = user.getVisitedLocations();</span>
 		// List&lt;VisitedLocation&gt; visitedLocationList =
 		// user.getVisitedLocations().stream().collect(Collectors.toList());
-<span class="fc" id="L43">		List&lt;Attraction&gt; attractions = gpsUtil.getAttractions();</span>
+<span class="fc" id="L43">		List&lt;Attraction&gt; attractions = gpsUtilService.getAttractions();</span>
 
 <span class="fc bfc" id="L45" title="All 2 branches covered.">		for (VisitedLocation visitedLocation : userLocations) {</span>
 <span class="fc bfc" id="L46" title="All 2 branches covered.">			for (Attraction attraction : attractions) {</span>
