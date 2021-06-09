@@ -124,7 +124,7 @@ public class TourGuideService {
 	private final Map<String, User> internalUserMap = new HashMap<>();
 
 	private void initializeInternalUsers() {
-		IntStream.range(0, InternalTestHelper.getInternalUserNumber()).parallel().forEach(i -> {
+		IntStream.range(0, InternalTestHelper.getInternalUserNumber()).forEach(i -> {
 			String userName = "internalUser" + i;
 			String phone = "000";
 			String email = userName + "@tourGuide.com";
