@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"tourGuide"},{"l":"tourGuide.helper"},{"l":"tourGuide.service"},{"l":"tourGuide.tracker"},{"l":"tourGuide.user"}];updateSearchResults();
