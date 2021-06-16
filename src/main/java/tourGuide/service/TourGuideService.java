@@ -2,13 +2,7 @@ package tourGuide.service;
 
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -26,6 +20,7 @@ import tourGuide.helper.InternalTestHelper;
 import tourGuide.tracker.Tracker;
 import tourGuide.user.User;
 import tourGuide.user.UserReward;
+import tourGuide.util.LocalizationUtil;
 import tripPricer.Provider;
 import tripPricer.TripPricer;
 
@@ -41,7 +36,8 @@ public class TourGuideService {
 	public TourGuideService(GpsUtilService gpsUtilService, RewardsService rewardsService) {
 		this.gpsUtilService = gpsUtilService;
 		this.rewardsService = rewardsService;
-
+		LocalizationUtil localizationUtil = new LocalizationUtil();
+		Locale.setDefault(localizationUtil.getUS_LOCALE());
 		if (testMode) {
 			logger.info("TestMode enabled");
 			logger.debug("Initializing users");

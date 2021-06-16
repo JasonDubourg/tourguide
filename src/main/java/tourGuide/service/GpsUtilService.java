@@ -19,6 +19,10 @@ public class GpsUtilService {
         this.gpsUtil = new GpsUtil();
     }
 
+    public GpsUtil getGpsUtil() {
+        return gpsUtil;
+    }
+
     public void trackUser(User user, TourGuideService tourGuideService) {
         CompletableFuture.supplyAsync(() -> gpsUtil.getUserLocation(user.getUserId()), executor)
                 .thenAccept(visitedLocation -> tourGuideService.addUserRewards(user, visitedLocation));
